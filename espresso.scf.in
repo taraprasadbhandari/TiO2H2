@@ -1,0 +1,61 @@
+&CONTROL
+    calculation  = "scf"
+    max_seconds  =  5.18400e+06
+    pseudo_dir   = "./"
+    verbosity='high'
+     tstress = .true.
+    tprnfor = .true. 
+
+/
+
+&SYSTEM
+      a                         =  1.34335e+01
+    b                         =  1.25485e+01
+    c                         =  1.39347e+01
+    constrained_magnetization = "none"
+    degauss                   =  1.00000e-02
+    ecutrho                   =  2.25000e+02
+    ecutwfc                   =  2.50000e+01
+    ibrav                     = 4
+    lda_plus_u                = .FALSE.
+    nat                       = 5
+    nosym                     = .FALSE.
+    nspin                     = 2
+    ntyp                      = 3
+    occupations               = "smearing"
+    smearing                  = "gaussian"
+    starting_magnetization(1) =  0.00000e+00
+    starting_magnetization(2) =  0.00000e+00
+    starting_magnetization(3) =  2.00000e-01
+/
+
+&ELECTRONS
+    conv_thr         =  1.00000e-07
+    diago_david_ndim = 4
+    diagonalization  = "david"
+    electron_maxstep = 560
+    mixing_beta      =  4.00000e-01
+    mixing_mode      = "plain"
+    mixing_ndim      = 8
+    startingpot      = "atomic"
+    startingwfc      = "atomic+random"
+/
+
+K_POINTS {automatic}
+ 4 4 4 0 0 0
+
+ATOMIC_SPECIES
+H       1.00794  H.pbe-rrkjus.UPF
+O      15.99940  O.pbe-rrkjus.UPF
+Ti     47.86700  Ti.pbe-sp-van_ak.UPF
+
+
+
+ATOMIC_POSITIONS (angstrom)
+H        3.209901816   4.201740652   5.118849272
+H        3.618784009   4.202458712   5.754917412
+O        4.822105716   5.596425470   3.458298586
+O        4.796956746   2.865880719   3.333666103
+Ti       5.152377456   4.189075313   4.264411855
+
+

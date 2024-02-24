@@ -1,0 +1,385 @@
+import FreeCAD
+import Draft
+import Part
+import TechDraw
+doc=App.newDocument("Brillouin")
+App.activeDocument().Tip = App.activeDocument().addObject('App::DocumentObjectGroup','Group')
+App.activeDocument().Group.Label = 'Brillouin zone'
+point001=FreeCAD.Vector(  66.66666667,   0.00000000,  48.20161180)
+point002=FreeCAD.Vector(  33.33333333,  57.73502692,  48.20161180)
+point003=FreeCAD.Vector( -33.33333333,  57.73502692,  48.20161180)
+point004=FreeCAD.Vector( -66.66666667,   0.00000000,  48.20161180)
+point005=FreeCAD.Vector( -33.33333333, -57.73502692,  48.20161180)
+point006=FreeCAD.Vector(  33.33333333, -57.73502692,  48.20161180)
+point007=FreeCAD.Vector(  66.66666667,   0.00000000, -48.20161180)
+point008=FreeCAD.Vector(  33.33333333,  57.73502692, -48.20161180)
+point009=FreeCAD.Vector( -33.33333333,  57.73502692, -48.20161180)
+point010=FreeCAD.Vector( -66.66666667,   0.00000000, -48.20161180)
+point011=FreeCAD.Vector( -33.33333333, -57.73502692, -48.20161180)
+point012=FreeCAD.Vector(  33.33333333, -57.73502692, -48.20161180)
+L001=Part.LineSegment(point001,point002)
+L002=Part.LineSegment(point002,point008)
+L003=Part.LineSegment(point008,point007)
+L004=Part.LineSegment(point007,point001)
+E001=Part.Edge(L001)
+E002=Part.Edge(L002)
+E003=Part.Edge(L003)
+E004=Part.Edge(L004)
+W=Part.Wire([E001,E002,E003,E004,])
+F001=Part.Face(W)
+L001=Part.LineSegment(point002,point003)
+L002=Part.LineSegment(point003,point009)
+L003=Part.LineSegment(point009,point008)
+L004=Part.LineSegment(point008,point002)
+E001=Part.Edge(L001)
+E002=Part.Edge(L002)
+E003=Part.Edge(L003)
+E004=Part.Edge(L004)
+W=Part.Wire([E001,E002,E003,E004,])
+F002=Part.Face(W)
+L001=Part.LineSegment(point003,point004)
+L002=Part.LineSegment(point004,point010)
+L003=Part.LineSegment(point010,point009)
+L004=Part.LineSegment(point009,point003)
+E001=Part.Edge(L001)
+E002=Part.Edge(L002)
+E003=Part.Edge(L003)
+E004=Part.Edge(L004)
+W=Part.Wire([E001,E002,E003,E004,])
+F003=Part.Face(W)
+L001=Part.LineSegment(point004,point005)
+L002=Part.LineSegment(point005,point011)
+L003=Part.LineSegment(point011,point010)
+L004=Part.LineSegment(point010,point004)
+E001=Part.Edge(L001)
+E002=Part.Edge(L002)
+E003=Part.Edge(L003)
+E004=Part.Edge(L004)
+W=Part.Wire([E001,E002,E003,E004,])
+F004=Part.Face(W)
+L001=Part.LineSegment(point005,point006)
+L002=Part.LineSegment(point006,point012)
+L003=Part.LineSegment(point012,point011)
+L004=Part.LineSegment(point011,point005)
+E001=Part.Edge(L001)
+E002=Part.Edge(L002)
+E003=Part.Edge(L003)
+E004=Part.Edge(L004)
+W=Part.Wire([E001,E002,E003,E004,])
+F005=Part.Face(W)
+L001=Part.LineSegment(point006,point001)
+L002=Part.LineSegment(point001,point007)
+L003=Part.LineSegment(point007,point012)
+L004=Part.LineSegment(point012,point006)
+E001=Part.Edge(L001)
+E002=Part.Edge(L002)
+E003=Part.Edge(L003)
+E004=Part.Edge(L004)
+W=Part.Wire([E001,E002,E003,E004,])
+F006=Part.Face(W)
+L001=Part.LineSegment(point001,point002)
+L002=Part.LineSegment(point002,point003)
+L003=Part.LineSegment(point003,point004)
+L004=Part.LineSegment(point004,point005)
+L005=Part.LineSegment(point005,point006)
+L006=Part.LineSegment(point006,point001)
+E001=Part.Edge(L001)
+E002=Part.Edge(L002)
+E003=Part.Edge(L003)
+E004=Part.Edge(L004)
+E005=Part.Edge(L005)
+E006=Part.Edge(L006)
+W=Part.Wire([E001,E002,E003,E004,E005,E006,])
+F007=Part.Face(W)
+L001=Part.LineSegment(point007,point008)
+L002=Part.LineSegment(point008,point009)
+L003=Part.LineSegment(point009,point010)
+L004=Part.LineSegment(point010,point011)
+L005=Part.LineSegment(point011,point012)
+L006=Part.LineSegment(point012,point007)
+E001=Part.Edge(L001)
+E002=Part.Edge(L002)
+E003=Part.Edge(L003)
+E004=Part.Edge(L004)
+E005=Part.Edge(L005)
+E006=Part.Edge(L006)
+W=Part.Wire([E001,E002,E003,E004,E005,E006,])
+F008=Part.Face(W)
+S=Part.Shell([F001,F002,F003,F004,F005,F006,F007,F008, ])
+P=Part.Solid(S)
+App.ActiveDocument.addObject('Part::Feature','Solid').Shape=P
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Solid"))
+App.activeDocument().Tip = App.activeDocument().addObject('App::DocumentObjectGroup','Group001')
+App.activeDocument().Group001.Label = 'axis'
+point999=FreeCAD.Vector(   0.00000000,   0.00000000,  48.20161180)
+point998=FreeCAD.Vector(   0.00000000,   0.00000000,  84.86827847)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge").LineColor = (   0.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge"))
+App.activeDocument().recompute()
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Edge"))
+Gui.getDocument("Brillouin").getObject("Edge").Visibility=False
+point999=FreeCAD.Vector(  66.66666667,   0.00000000,   0.00000000)
+point998=FreeCAD.Vector( 103.33333333,   0.00000000,   0.00000000)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge001").LineColor = (   0.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge001").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge001"))
+App.activeDocument().recompute()
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Edge001"))
+Gui.getDocument("Brillouin").getObject("Edge001").Visibility=False
+point999=FreeCAD.Vector(   0.00000000,  57.73502692,   0.00000000)
+point998=FreeCAD.Vector(   0.00000000,  87.73502692,   0.00000000)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge002").LineColor = (   0.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge002").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge002"))
+App.activeDocument().recompute()
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Edge002"))
+Gui.getDocument("Brillouin").getObject("Edge002").Visibility=False
+App.ActiveDocument.addObject("Part::Cone","Cone")
+App.ActiveDocument.ActiveObject.Label = "Cone"
+FreeCAD.getDocument("Brillouin").getObject("Cone").Radius1 = '   4.00 mm'
+FreeCAD.getDocument("Brillouin").getObject("Cone").Radius2= '0 mm'
+FreeCAD.getDocument("Brillouin").getObject("Cone").      Placement = App.Placement(App.Vector(   0.00,   0.00,  78.20), App.Rotation(App.Vector(   0.00,   0.00,   1.00),   0.00))
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Cone"))
+Gui.getDocument("Brillouin").getObject("Cone").Visibility=False
+App.ActiveDocument.addObject("Part::Cone","Cone001")
+App.ActiveDocument.ActiveObject.Label = "Cone001"
+FreeCAD.getDocument("Brillouin").getObject("Cone001").Radius1 = '   4.00 mm'
+FreeCAD.getDocument("Brillouin").getObject("Cone001").Radius2= '0 mm'
+FreeCAD.getDocument("Brillouin").getObject("Cone001").      Placement = App.Placement(App.Vector( 103.33,   0.00,   0.00), App.Rotation(App.Vector(   0.00,   1.00,   0.00),  90.00))
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Cone001"))
+Gui.getDocument("Brillouin").getObject("Cone001").Visibility=False
+App.ActiveDocument.addObject("Part::Cone","Cone002")
+App.ActiveDocument.ActiveObject.Label = "Cone002"
+FreeCAD.getDocument("Brillouin").getObject("Cone002").Radius1 = '   4.00 mm'
+FreeCAD.getDocument("Brillouin").getObject("Cone002").Radius2= '0 mm'
+FreeCAD.getDocument("Brillouin").getObject("Cone002").      Placement = App.Placement(App.Vector(   0.00,  87.74,   0.00), App.Rotation(App.Vector(   1.00,   0.00,   0.00), -90.00))
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Cone002"))
+Gui.getDocument("Brillouin").getObject("Cone002").Visibility=False
+text = Draft.makeText(["k"],point=FreeCAD.Vector( 103.33,   6.67,  -8.00))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Text"))
+Gui.getDocument("Brillouin").getObject("Text").Visibility=False
+text = Draft.makeText(["x"],point=FreeCAD.Vector( 103.33,  15.33, -12.00))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text001").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text001").FontSize = ' 28. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text001").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Text001"))
+Gui.getDocument("Brillouin").getObject("Text001").Visibility=False
+text = Draft.makeText(["k"],point=FreeCAD.Vector(  13.33,  87.74,  13.33))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text002").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text002").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text002").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Text002"))
+Gui.getDocument("Brillouin").getObject("Text002").Visibility=False
+text = Draft.makeText(["y"],point=FreeCAD.Vector(  13.33,  99.74,   9.33))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text003").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text003").FontSize = ' 28. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text003").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Text003"))
+Gui.getDocument("Brillouin").getObject("Text003").Visibility=False
+text = Draft.makeText(["k"],point=FreeCAD.Vector(  13.33,  13.33,  84.87))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text004").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text004").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text004").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Text004"))
+Gui.getDocument("Brillouin").getObject("Text004").Visibility=False
+text = Draft.makeText(["z"],point=FreeCAD.Vector(  13.33,  21.33,  78.20))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text005").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text005").FontSize = ' 28. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text005").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group001").addObject(App.getDocument("Brillouin").getObject("Text005"))
+Gui.getDocument("Brillouin").getObject("Text005").Visibility=False
+text = Draft.makeText(["\u0393"],point=FreeCAD.Vector(   0.00,   0.00, -12.00))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text006").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text006").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text006").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text006"))
+text = Draft.makeText(["M"],point=FreeCAD.Vector(  50.00,  34.87, -12.00))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text007").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text007").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text007").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text007"))
+text = Draft.makeText(["K"],point=FreeCAD.Vector(  66.67,   6.00, -12.00))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text008").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text008").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text008").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text008"))
+text = Draft.makeText(["\u0393"],point=FreeCAD.Vector(   0.00,   0.00, -12.00))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text009").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text009").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text009").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text009"))
+text = Draft.makeText(["A"],point=FreeCAD.Vector(  -6.00,  -6.00,  56.20))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text010").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text010").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text010").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text010"))
+text = Draft.makeText(["L"],point=FreeCAD.Vector(  56.00,  34.87,  56.20))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text011").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text011").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text011").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text011"))
+text = Draft.makeText(["H"],point=FreeCAD.Vector(  60.67,  -6.00,  56.20))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text012").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text012").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text012").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text012"))
+text = Draft.makeText(["A"],point=FreeCAD.Vector(  -6.00,  -6.00,  56.20))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text013").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text013").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text013").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text013"))
+text = Draft.makeText(["L"],point=FreeCAD.Vector(  56.00,  34.87,  56.20))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text014").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text014").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text014").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text014"))
+text = Draft.makeText(["M"],point=FreeCAD.Vector(  50.00,  34.87, -12.00))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text015").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text015").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text015").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text015"))
+text = Draft.makeText(["H"],point=FreeCAD.Vector(  60.67,  -6.00,  56.20))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text016").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text016").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text016").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text016"))
+text = Draft.makeText(["K"],point=FreeCAD.Vector(  66.67,   6.00, -12.00))
+Draft.autogroup(text)
+FreeCADGui.getDocument("Brillouin").getObject("Text017").DisplayMode = u"2D text"
+FreeCADGui.getDocument("Brillouin").getObject("Text017").FontSize = ' 33. mm'
+FreeCADGui.getDocument("Brillouin").getObject("Text017").TextColor = (  1.,  0.,  0.)
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Text017"))
+point999=FreeCAD.Vector(  50.00000000,  28.86751346,  -0.00000000)
+point998=FreeCAD.Vector(   0.00000000,   0.00000000,   0.00000000)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge003").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge003").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge003"))
+App.activeDocument().recompute()
+point999=FreeCAD.Vector(  66.66666667,   0.00000000,   0.00000000)
+point998=FreeCAD.Vector(  50.00000000,  28.86751346,  -0.00000000)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge004").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge004").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge004"))
+App.activeDocument().recompute()
+point999=FreeCAD.Vector(   0.00000000,   0.00000000,   0.00000000)
+point998=FreeCAD.Vector(  66.66666667,   0.00000000,   0.00000000)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge005").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge005").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge005"))
+App.activeDocument().recompute()
+point999=FreeCAD.Vector(   0.00000000,  -0.00000000,  48.20161180)
+point998=FreeCAD.Vector(   0.00000000,   0.00000000,   0.00000000)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge006").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge006").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge006"))
+App.activeDocument().recompute()
+point999=FreeCAD.Vector(  50.00000000,  28.86751346,  48.20161180)
+point998=FreeCAD.Vector(   0.00000000,  -0.00000000,  48.20161180)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge007").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge007").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge007"))
+App.activeDocument().recompute()
+point999=FreeCAD.Vector(  66.66666667,   0.00000000,  48.20161180)
+point998=FreeCAD.Vector(  50.00000000,  28.86751346,  48.20161180)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge008").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge008").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge008"))
+App.activeDocument().recompute()
+point999=FreeCAD.Vector(   0.00000000,  -0.00000000,  48.20161180)
+point998=FreeCAD.Vector(  66.66666667,   0.00000000,  48.20161180)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge009").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge009").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge009"))
+App.activeDocument().recompute()
+point999=FreeCAD.Vector(  50.00000000,  28.86751346,  48.20161180)
+point998=FreeCAD.Vector(   0.00000000,  -0.00000000,  48.20161180)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge010").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge010").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge010"))
+App.activeDocument().recompute()
+point999=FreeCAD.Vector(  50.00000000,  28.86751346,  -0.00000000)
+point998=FreeCAD.Vector(  50.00000000,  28.86751346,  48.20161180)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge011").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge011").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge011"))
+App.activeDocument().recompute()
+point999=FreeCAD.Vector(  66.66666667,   0.00000000,  48.20161180)
+point998=FreeCAD.Vector(  50.00000000,  28.86751346,  -0.00000000)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge012").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge012").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge012"))
+App.activeDocument().recompute()
+point999=FreeCAD.Vector(  66.66666667,   0.00000000,   0.00000000)
+point998=FreeCAD.Vector(  66.66666667,   0.00000000,  48.20161180)
+_=Part.Edge(Part.LineSegment(point999, point998))
+App.ActiveDocument.addObject('Part::Feature','Edge').Shape=_
+del _
+FreeCADGui.getDocument("Brillouin").getObject("Edge013").LineColor = (   1.00,   0.00,   0.00)
+FreeCADGui.getDocument("Brillouin").getObject("Edge013").LineWidth = 3
+App.getDocument("Brillouin").getObject("Group").addObject(App.getDocument("Brillouin").getObject("Edge013"))
+App.activeDocument().recompute()
+FreeCADGui.getDocument("Brillouin").getObject("Solid").ShapeColor = (1.00,1.00,0.50)
+FreeCADGui.ActiveDocument.getObject("Solid").Transparency= 15
+FreeCADGui.ActiveDocument.getObject("Solid").LineWidth = 3.00
+Gui.SendMsgToActiveView("ViewFit")
+Gui.activeDocument().activeView().viewIsometric()

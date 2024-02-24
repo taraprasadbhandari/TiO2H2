@@ -1,0 +1,344 @@
+
+     Program THERMO_PW v.6.7MaX starts on  8Feb2024 at 18:26:11 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     4 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       4
+     Reading input from _temporary_1
+     file H.pbe-rrkjus.UPF: wavefunction(s)  1S renormalized
+     file O.pbe-rrkjus.UPF: wavefunction(s)  2S renormalized
+
+   Info: using nr1, nr2, nr3 values from input
+
+     Deltae set to         0.000009500 Ry
+
+
+     Calculating the volume that minimizes the energy
+
+     FFT mesh: (  125,  120,  125 )
+
+     Bravais lattice:
+
+     ibrav= 14: triclinic
+     Cell parameters:
+
+     alat=  25.385636 a.u., b/a=   0.934120, c/a=   1.037310
+
+     cos(alpha)=   0.000000, cos(beta)=   0.000000, cos(gamma)=   0.000000
+     alpha=  90.000000 deg,  beta=  90.000000 deg,  gamma=  90.000000 deg
+
+
+     Starting primitive lattice vectors:
+     crystal axes: (cart. coord. in units of alat)
+
+               a(1) = (   1.000000   0.000000   0.000000 )  
+               a(2) = (   0.000000   0.934120   0.000000 )  
+               a(3) = (   0.000000   0.000000   1.037310 )  
+
+     Starting reciprocal lattice vectors:
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+
+               b(1) = (  1.000000  0.000000  0.000000 )  
+               b(2) = (  0.000000  1.070526  0.000000 )  
+               b(3) = (  0.000000  0.000000  0.964032 )  
+
+     Starting atomic positions in Cartesian axes:
+
+     site n.     atom                  positions (alat units)
+         1           H   tau(   1) = (   0.2419143   0.3150407   0.3834953  )
+         2           H   tau(   2) = (   0.2705115   0.3149127   0.4330511  )
+         3           O   tau(   3) = (   0.3614166   0.4179788   0.2585824  )
+         4           O   tau(   4) = (   0.3592850   0.2172332   0.2501877  )
+         5           Ti  tau(   5) = (   0.3874704   0.3145768   0.3200417  )
+
+     Starting atomic positions in crystallographic axes:
+
+     site n.     atom                  positions (cryst. coord.)
+         1           H   tau(   1) = (  0.2419143  0.3372593  0.3697019  )
+         2           H   tau(   2) = (  0.2705115  0.3371224  0.4174752  )
+         3           O   tau(   3) = (  0.3614166  0.4474573  0.2492818  )
+         4           O   tau(   4) = (  0.3592850  0.2325539  0.2411890  )
+         5           Ti  tau(   5) = (  0.3874704  0.3367628  0.3085305  )
+
+     The energy minimization will require  9 scf calculations
+
+     The point group   1 C_1 (1) is compatible with the Bravais lattice.
+
+     The rotation matrices with the order used inside thermo_pw are:
+
+     No symmetry found
+
+
+                          s                  frac. trans.
+
+      isym =  1     identity                                     
+
+ cryst.   s( 1) = (  1      0      0     )    f =(  32.7680 )
+                  (  0      1      0     )       (   0.0500 )
+                  (  0      0      1     )       ( ******** )
+
+ cart.    s( 1) = (  1.000  0.000  0.000 )    f =(  32.7680 )
+                  (  0.000  1.000  0.000 )       (   0.0467 )
+                  (  0.000  0.000  1.000 )       ( ******** )
+
+
+     point group C_1 (1)    
+     there are  1 classes
+     the character table:
+
+       E    
+A      1.00
+
+     the symmetry operations in each class and the name of the first element:
+
+     E        1
+          identity                                               
+
+     Space group identification,   1 symmetries:
+
+     Bravais lattice  14  triclinic                               
+     Point group number   1 /   1  C_1 (1)
+
+     Nonsymmorphic operations not found: All fractional translations vanish
+     Symmetries of the point group in standard order
+
+        1       E   1
+
+
+     Space group number    1
+
+     Space group P1   (group number   1).
+     The origin coincides with the ITA tables.
+
+     The Laue class is C_i (-1)   
+
+     ----------------------------------------------------------------------
+     Ions are relaxed in each calculation
+     ----------------------------------------------------------------------
+
+     Total mass of this unit cell         81.8817 a.m.u.
+     Density of this solid                  57.88 kg/m^3         0.0579 g/cm^3
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    1 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74315829 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    2 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74311061 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    3 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74315433 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    4 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74316766 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    5 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74310002 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    6 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74311240 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    7 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74312448 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    8 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74309927 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    9 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74315690 Ry
+     Beware: file energy_files/output_ev.dat.ev.out will be overwritten
+
+  ----------------------------------------------------------------------------
+
+     The equilibrium lattice constant is               25.3357 a.u.
+     The bulk modulus is                                0.000  kbar
+     The pressure derivative of the bulk modulus is     1.471
+     The total energy at the minimum is                -182.743131551 Ry
+  ----------------------------------------------------------------------------
+
+
+     Total mass of this unit cell         81.8817 a.m.u.
+     Density of this solid                  58.23 kg/m^3         0.0582 g/cm^3
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    1 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+     Current dimensions of program PWSCF are:
+     Max number of different atomic species (ntypx) = 10
+     Max number of k-points (npk) =  40000
+     Max angular momentum in pseudopotentials (lmaxx) =  3
+
+     Subspace diagonalization in iterative solution of the eigenvalue problem:
+     a serial algorithm will be used
+
+
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min        2653    1177    318               220589    65328    9206
+     Max        2654    1178    319               220590    65329    9209
+     Sum       10613    4711   1275               882357   261313   36829
+
+
+
+     bravais-lattice index     =           14
+     lattice parameter (alat)  =      25.1856  a.u.
+     unit-cell volume          =   15479.9602 (a.u.)^3
+     number of atoms/cell      =            5
+     number of atomic types    =            3
+     number of electrons       =        26.00
+     number of Kohn-Sham states=           12
+     kinetic-energy cutoff     =      25.0000  Ry
+     charge density cutoff     =     225.0000  Ry
+     Exchange-correlation= SLA  PW   PBE  PBE
+                           (   1   4   3   4   0   0   0)
+
+     celldm(1)=  25.185636  celldm(2)=   0.934120  celldm(3)=   1.037310
+     celldm(4)=   0.000000  celldm(5)=   0.000000  celldm(6)=   0.000000
+
+     crystal axes: (cart. coord. in units of alat)
+               a(1) = (   1.000000   0.000000   0.000000 )  
+               a(2) = (   0.000000   0.934120   0.000000 )  
+               a(3) = (   0.000000   0.000000   1.037310 )  
+
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+               b(1) = (  1.000000 -0.000000 -0.000000 )  
+               b(2) = (  0.000000  1.070526 -0.000000 )  
+               b(3) = (  0.000000  0.000000  0.964032 )  
+
+
+     PseudoPot. # 1 for H  read from file:
+     ./H.pbe-rrkjus.UPF
+     MD5 check sum: d9bcf6f4e88d09736c6b7f7b23490d32
+     Pseudo is Ultrasoft, Zval =  1.0
+     Generated by new atomic code, or converted to UPF format
+     Using radial grid of 1061 points,  2 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 2 for O  read from file:
+     ./O.pbe-rrkjus.UPF
+     MD5 check sum: a4b6f5047f549466a921003d899c5518
+     Pseudo is Ultrasoft, Zval =  6.0
+     Generated by new atomic code, or converted to UPF format
+     Using radial grid of 1269 points,  4 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+     Q(r) pseudized with 0 coefficients 
+
+
+     PseudoPot. # 3 for Ti read from file:
+     ./Ti.pbe-sp-van_ak.UPF
+     MD5 check sum: 2e7572f3128e7cf134dafc4105d62c0f
+     Pseudo is Ultrasoft, Zval = 12.0
+     Generated by new atomic code, or converted to UPF format
+     Using radial grid of  851 points,  6 beta functions with: 
+                l(1) =   0
+                l(2) =   0
+                l(3) =   1
+                l(4) =   1
+                l(5) =   2
+                l(6) =   2
+     Q(r) pseudized with  8 coefficients,  rinner =    1.000   1.000   1.000
+                                                       1.000   1.000
+
+     atomic species   valence    mass     pseudopotential
+        H              1.00     1.00794     H ( 1.00)
+        O              6.00    15.99940     O ( 1.00)
+        Ti            12.00    47.86700     Ti( 1.00)
+
+     Starting magnetic structure 
+     atomic species   magnetization
+        H            0.000
+        O            0.000
+        Ti           0.200
+
+     No symmetry found
+
+
+
+   Cartesian axes
+
+     site n.     atom                  positions (alat units)
+         1           H   tau(   1) = (   0.2419143   0.3150407   0.3834953  )
+         2           H   tau(   2) = (   0.2705115   0.3149127   0.4330511  )
+         3           O   tau(   3) = (   0.3614166   0.4179788   0.2585824  )
+         4           O   tau(   4) = (   0.3592850   0.2172332   0.2501877  )
+         5           Ti  tau(   5) = (   0.3874704   0.3145768   0.3200417  )
+
+     number of k points=  2048  Gaussian smearing, width (Ry)=  0.0100
+
+     Number of k-points >= 100: set verbosity='high' to print them.
+
+     Dense  grid:   882357 G-vectors     FFT dimensions: ( 125, 120, 125)
+
+     Smooth grid:   261313 G-vectors     FFT dimensions: (  81,  75,  90)
+
+     Estimated max dynamical RAM per process >     746.83 MB
+
+     Estimated total dynamical RAM >       2.92 GB
+     Generating pointlists ...
+     new r_m :   0.0236 (alat units)  0.5944 (a.u.) for type    1
+     new r_m :   0.0508 (alat units)  1.2787 (a.u.) for type    2
+     new r_m :   0.0508 (alat units)  1.2787 (a.u.) for type    3
+
+     The potential is recalculated from file :
+     .//g1/pwscf.save/charge-density
+
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     Error in routine potinit (1):
+     starting and expected charges differ
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+     stopping ...

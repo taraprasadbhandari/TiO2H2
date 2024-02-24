@@ -1,0 +1,224 @@
+
+     Program THERMO_PW v.6.7MaX starts on  3Feb2024 at 13:50:27 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     4 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =       4
+     Reading input from _temporary_1
+     file H.pbe-rrkjus.UPF: wavefunction(s)  1S renormalized
+     file O.pbe-rrkjus.UPF: wavefunction(s)  2S renormalized
+
+   Info: using nr1, nr2, nr3 values from input
+
+     C_1 (1) is incompatible with the hexagonal Bravais lattice
+     It is compatible with the 
+     triclinic Bravais lattice; ibrav=   14
+
+     You might want to change the Bravais lattice or to
+
+     understand why the symmetries are wrong before continuing
+     The point group or the Laue class are not used to reduce the number of 
+     computed tensor components
+
+
+     Computing the elastic constants at the minimum volume 
+
+     FFT mesh: (  125,  125,  125 )
+
+     Bravais lattice:
+
+     ibrav=  4: hexagonal
+     Cell parameters:
+
+     alat=  25.385636 a.u., c/a=   1.037310
+
+
+     Starting primitive lattice vectors:
+     crystal axes: (cart. coord. in units of alat)
+
+               a(1) = (   1.000000   0.000000   0.000000 )  
+               a(2) = (  -0.500000   0.866025   0.000000 )  
+               a(3) = (   0.000000   0.000000   1.037310 )  
+
+     Starting reciprocal lattice vectors:
+     reciprocal axes: (cart. coord. in units 2 pi/alat)
+
+               b(1) = (  1.000000  0.577350 -0.000000 )  
+               b(2) = (  0.000000  1.154701  0.000000 )  
+               b(3) = (  0.000000 -0.000000  0.964032 )  
+
+     Starting atomic positions in Cartesian axes:
+
+     site n.     atom                  positions (alat units)
+         1           H   tau(   1) = (   0.2389475   0.3127808   0.3810510  )
+         2           H   tau(   2) = (   0.2693850   0.3128342   0.4284004  )
+         3           O   tau(   3) = (   0.3589612   0.4166022   0.2574384  )
+         4           O   tau(   4) = (   0.3570891   0.2133383   0.2481607  )
+         5           Ti  tau(   5) = (   0.3835469   0.3118380   0.3174461  )
+
+     Starting atomic positions in crystallographic axes:
+
+     site n.     atom                  positions (cryst. coord.)
+         1           H   tau(   1) = (  0.4195316  0.3611681  0.3673455  )
+         2           H   tau(   2) = (  0.4500000  0.3612299  0.4129918  )
+         3           O   tau(   3) = (  0.5994866  0.4810508  0.2481789  )
+         4           O   tau(   4) = (  0.4802601  0.2463419  0.2392349  )
+         5           Ti  tau(   5) = (  0.5635866  0.3600795  0.3060282  )
+
+     The energy minimization will require  9 scf calculations
+
+     C_1 (1) is incompatible with the hexagonal Bravais lattice
+     It is compatible with the 
+     triclinic Bravais lattice; ibrav=   14
+
+     You might want to change the Bravais lattice or to
+
+     understand why the symmetries are wrong before continuing
+     The point group or the Laue class are not used to reduce the number of 
+     computed tensor components
+
+     No symmetry found
+
+
+                          s                  frac. trans.
+
+      isym =  1     identity                                     
+
+ cryst.   s( 1) = (  1      0      0     )    f =(  32.7680 )
+                  (  0      1      0     )       (   0.0480 )
+                  (  0      0      1     )       ( ******** )
+
+ cart.    s( 1) = (  1.000  0.000  0.000 )    f =(  32.7440 )
+                  (  0.000  1.000  0.000 )       (   0.0416 )
+                  (  0.000  0.000  1.000 )       ( ******** )
+
+
+     point group C_1 (1)    
+     there are  1 classes
+     the character table:
+
+       E    
+A      1.00
+
+     the symmetry operations in each class and the name of the first element:
+
+     E        1
+          identity                                               
+
+     ibrav=0 or Bravais lattice not compatible with the point group.
+
+     The code will not use symmetry.
+
+     Cannot use the Laue class with ibrav=0, using laue=0
+
+     I will use elastic constants with the form
+     Laue class not programmed or ibrav=0 using C_i
+
+     ( c11  c12  c13  c14  c15  c16 )
+     ( c12  c22  c23  c24  c25  c26 )
+     ( c13  c23  c33  c34  c35  c36 )
+     ( c14  c24  c34  c44  c45  c46 )
+     ( c15  c25  c35  c45  c55  c56 )
+     ( c16  c26  c36  c46  c56  c66 )
+
+     It requires all six strains
+     for a total of 24 scf calculations
+
+     ----------------------------------------------------------------------
+     Ions are relaxed in each calculation
+     ----------------------------------------------------------------------
+
+     Total mass of this unit cell         81.8817 a.m.u.
+     Density of this solid                  62.44 kg/m^3         0.0624 g/cm^3
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    1 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74315829 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    2 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74311061 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    3 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74315433 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    4 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74316766 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    5 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74310002 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    6 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74311240 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    7 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74312448 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    8 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74309927 Ry
+
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+     Doing work    9 /     9
+  ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+     Data found on file
+     Total energy =        -182.74315690 Ry
+     Beware: file energy_files/output_ev.dat.ev.out will be overwritten
+
+  ----------------------------------------------------------------------------
+
+     The equilibrium lattice constant is               25.3357 a.u.
+     The bulk modulus is                                0.000  kbar
+     The pressure derivative of the bulk modulus is     1.471
+     The total energy at the minimum is                -182.743131551 Ry
+  ----------------------------------------------------------------------------
+
+
+     Total mass of this unit cell         81.8817 a.m.u.
+     Density of this solid                  62.81 kg/m^3         0.0628 g/cm^3
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+     Error in routine initialize_elastic_cons (1):
+     Laue class not available
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+     stopping ...
